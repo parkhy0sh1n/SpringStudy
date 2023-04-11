@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="p" class="com.gdu.app01.xml05.Person">
+		
+		<!--
+			List
+			<list> 태그로 값을 채워준다.
+		-->	
+		<property name="hobbies">
+			<list>
+				<value>여행</value>			
+				<value>운동</value>			
+				<value>영화</value>			
+			</list>
+		</property>
+		
+		<!--
+			Set
+			List와의 차이점
+			1) 중복을 허용하지 않거 객체이다.
+			2) 인덱스로 데이터를 관리하지 않기 때문에 저장 순서가 보장되지 않는다.
+			<set> 태그로 값을 채워준다.
+		-->
+		<property name="contacts">
+			<set>
+				<value>010-1234-5678</value>			
+				<value>010-1234-5678</value>			
+				<value>010-1234-5678</value>			
+				<value>010-5678-9012</value>			
+			</set>
+		</property>
+		
+		<!-- 
+			Map 
+			<map> 태그로 값을 채워준다.
+			Map은 값을 key와 value로 분류하기 떄문에,
+			<entry> 태그의 key 속성과 value 속성에 값을 채워준다.
+		-->
+		<property name="friends">
+			<map>
+				<entry key="동네친구" value="영심이"></entry>
+				<entry key="학교친구" value="등심이"></entry>
+				<entry key="회사친구" value="덕심이"></entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>
