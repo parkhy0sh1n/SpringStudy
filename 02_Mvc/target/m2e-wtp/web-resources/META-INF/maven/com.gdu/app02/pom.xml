@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+	pom.xml : Spring MVC 라이브러리 설정 파일
+			- Spring MVC 라이브러리를 사용하기 위해 pom.xml를 수정한다.
+			- Marven 기반 프로젝트에서 루트 디렉터리에 존재하는 설정 파일이다.
+			- 라이브러리 태그를 삽입하고 저장하면 라이브러리가 로컬에 설치된다.(Marven에 의해)
+-->
+
+
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
    <modelVersion>4.0.0</modelVersion>
