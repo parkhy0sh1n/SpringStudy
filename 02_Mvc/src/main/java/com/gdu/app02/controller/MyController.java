@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /*
 	@Controller
-	안녕. 난 컨트롤러야.
-	@Component를 포함하고 있어서 자동으로 Spring Container에 Bean으로 등록되지.
-	나는 스프링에 의해서 사용되고 있어.
+		안녕. 난 컨트롤러야.
+		@Component를 포함하고 있어서 자동으로 Spring Container에 Bean으로 등록되지.
+		나는 스프링에 의해서 사용되고 있어.
 */
 
+// 클래스 레벨에 붙여주는 애너테이션이다. 
+// 특정 클래스에 붙여주면 '이 클래스는 컨트롤러다'라는 뜻이다.
 @Controller
 public class MyController {
 
@@ -25,6 +27,8 @@ public class MyController {
 	
 	/*
 		@RequestMapping
+		메소드 레벨에서 붙여주는 애너테이션이다. 
+		이 어노테이션이 붙은 메소들 중에서, 들어오는 사용자 요청과 일치하는 메소드가 실행됩니다.
 		1. value  : URL Mapping을 작성한다.    (동작할 주소를 작성한다.)
 		2. method : Request Method를 작성한다. (GET, POST, PUT, DELETE 등)
 	*/
