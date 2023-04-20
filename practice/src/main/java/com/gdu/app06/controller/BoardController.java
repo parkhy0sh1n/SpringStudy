@@ -22,8 +22,11 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 
+	// Get, Post 방식으로 요청하는 애너테이션.
 	@GetMapping("/list.do")
-	public String list(Model model) {  // Model : jsp로 전달(forward)할 데이터(속성, attribute)를 저장한다.
+	// Model : Controller에서 생성된 데이터를 담아 View로 전달할 때 사용하는 객체이다.
+	public String list(Model model) {
+		//  value 객체를 name 이름으로 추가함.(View 코드에서는 name으로 지정한 이름을 통해서 value를 사용한다.)
 		model.addAttribute("boardList", boardService.getBoardList());
 		return "board/list";
 	}
@@ -35,11 +38,19 @@ public class BoardController {
 	
 	@PostMapping("/add.do")
 	public String add(BoardDTO board) {
-		boardService.addBoard(board);      // addBoard() 메소드의 호출 결과인 int 값(0 또는 1)은 사용하지 않았다.
-		return "redirect:/board/list.do";  // 목록 보기로 redirect(redirect 경로는 항상 mapping으로 작성한다.)
+		// addBoard() 메소드의 호출 결과인 int 값(0 또는 1)은 사용하지 않았다.
+		boardService.addBoard(board);    
+		// 목록 보기로 redirect(redirect 경로는 항상 mapping으로 작성한다.)
+		return "redirect:/board/list.do"; 
 	}
 	
 	@GetMapping("/detail.do")
+	/*	
+		@RequestParam : 요청 파라미터 애너테이션.
+		value 		     : Key 값(board_no) 뒤에 오는 변수 board_no에 해당 값을 바인딩한다.
+		required=false   : Key 값이 존재하지 않다고 해서 BadRequest(HTTP 400 오류)가 발생하지 않는다. (디폴트는 true)
+		defaultValue="0" : 만약 Key 값이 존재하지 않다면, board_no 변수에 default로 0이 들어가게 된다.
+	*/
 	public String detail(@RequestParam(value="board_no", required=false, defaultValue="0") int board_no
 			           , Model model) {
 		model.addAttribute("b", boardService.getBoardByNo(board_no));

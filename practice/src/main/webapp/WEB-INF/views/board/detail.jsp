@@ -13,8 +13,9 @@
 <script src="${contextPath}/resources/summernote-0.8.18-dist/summernote-lite.min.js"></script>
 <script src="${contextPath}/resources/summernote-0.8.18-dist/lang/summernote-ko-KR.min.js"></script>
 <link rel="stylesheet" href="${contextPath}/resources/summernote-0.8.18-dist/summernote-lite.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script>
-	function fnEdit() {
+	function fnEdit(){
 		$('#edit_screen').show();
 		$('#detail_screen').hide();
 	}
@@ -30,14 +31,15 @@
 		$('#edit_screen').hide();
 		$('#detail_screen').show();
 	}
-	$(function() {
+	$(function(){
 		$('#content').summernote({
 			width: 640,
 			height: 480,
 			lang: 'ko-KR',
 			toolbar: [
 				['style', ['bold', 'italic', 'underline', 'clear']],
-				['font', ['bold', 'underline', 'clear']],
+				['font', ['strikethrough', 'superscript', 'subscript']],
+				['fontname', ['fontname']],
 				['color', ['color']],
 				['para', ['ul', 'ol', 'paragraph']],
 				['table', ['table']],
@@ -45,7 +47,7 @@
 				['view', ['fullscreen', 'codeview', 'help']]
 			]
 		})
-		$('#edit_screen').hide();	// 최초 편집화면은 숨김
+		$('#edit_screen').hide();  // 최초 편집화면은 숨김
 	})
 </script>
 </head>
@@ -74,8 +76,8 @@
 				<input type="text" id="title" name="title" value="${b.title}">
 			</div>
 			<div>
-				<div><label for="content">내용</label>	</div>
-				<textarea id="content" name="content">${b.content}</textarea>	<!-- summernote 편집기로 바뀌는 textarea -->
+				<div><label for="content">내용</label></div>
+				<textarea id="content" name="content">${b.content}</textarea>  <!-- summernote 편집기로 바뀌는 textarea -->
 			</div>
 			<div>
 				<input type="hidden" name="board_no" value="${b.board_no}">

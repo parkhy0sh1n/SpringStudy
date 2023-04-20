@@ -29,17 +29,23 @@ public class BoardController {
 		return "board/write";
 	}
 	
+	@GetMapping("/detail.do")
+	public String detail(@RequestParam(value="board_no", required=false, defaultValue="0") int board_no
+			           , Model model) {
+		model.addAttribute("b", boardService.getBoardByNo(board_no));
+		return "board/detail";
+	}
+	
 	@PostMapping("/add.do")
 	public String add(BoardDTO board) {
 		boardService.addBoard(board);      // addBoard() 메소드의 호출 결과인 int 값(0 또는 1)은 사용하지 않았다.
 		return "redirect:/board/list.do";  // 목록 보기로 redirect(redirect 경로는 항상 mapping으로 작성한다.)
 	}
 	
-	@GetMapping("/detail.do")
-	public String detail(@RequestParam(value="board_no", required=false, defaultValue="0") int board_no
-			           , Model model) {
-		model.addAttribute("b", boardService.getBoardByNo(board_no));
-		return "board/detail";
+	@PostMapping("/modify.do")
+	public String modify(BoardDTO board) {
+		boardService.modifyBoard(board);
+		return "redirect:/board/detail.do?board_no=" + board.getBoard_no();
 	}
 	
 	@GetMapping("/remove.do")
@@ -48,10 +54,5 @@ public class BoardController {
 		return "redirect:/board/list.do";
 	}
 	
-	@PostMapping("/modify.do")
-	public String modify(BoardDTO board) {
-		boardService.modifyBoard(board);
-		return "redirect:/board/detail.do?board_no=" + board.getBoard_no();
-	}
 	
 }

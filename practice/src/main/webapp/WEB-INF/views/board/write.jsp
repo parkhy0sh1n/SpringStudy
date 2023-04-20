@@ -13,52 +13,51 @@
 <script src="${contextPath}/resources/summernote-0.8.18-dist/summernote-lite.min.js"></script>
 <script src="${contextPath}/resources/summernote-0.8.18-dist/lang/summernote-ko-KR.min.js"></script>
 <link rel="stylesheet" href="${contextPath}/resources/summernote-0.8.18-dist/summernote-lite.min.css">
-<script>
-	function fnList() {
-		location.href = "${contextPath}/board/list.do";
+<style>
+	tbody tr:hover {
+		background-color: beige;
+		cursor: pointer;
 	}
-	
-	$(function() {
-		$('#content').summernote({
-			width: 640,
-			height: 480,
-			lang: 'ko-KR',
-			toolbar: [
-				['style', ['bold', 'italic', 'underline', 'clear']],
-				['font', ['bold', 'underline', 'clear']],
-				['color', ['color']],
-				['para', ['ul', 'ol', 'paragraph']],
-				['table', ['table']],
-				['insert', ['link', 'picture', 'video']],
-				['view', ['fullscreen', 'codeview', 'help']]
-			]
-		})
-	})
+</style>
+<script>
+	function fnDetail(n) {
+		location.href = '${contextPath}/board/detail.do?board_no=' + n;
+	}
 </script>
 </head>
 <body>
 
 	<div>
-		<h1>작성화면</h1>
-		<form method="post" action="${contextPath}/board/add.do">
-			<div>
-				<label for="title">제목</label>
-				<input type="text" id="title" name="title">
-			</div>
-			<div>
-				<label for="writer">작성자</label>
-				<input type="text" id="writer" name="writer">
-			</div>
-			<div>
-				<div><label for="content">내용</label>	</div>
-				<textarea id="content" name="content"></textarea>	<!-- summernote 편집기로 바뀌는 textarea -->
-			</div>
-			<div>
-				<button>작성완료</button>
-				<input type="button" value="목록" onclick="fnList()">
-			</div>
-		</form>
+		<a href="${contextPath}/board/write.do">새글작성하기</a>
+	</div>
+	
+	<div>
+		<table border="1">
+			<thead>
+				<tr>
+					<td>제목</td>
+					<td>작성자</td>
+					<td>작성일자</td>
+				</tr>
+			</thead>
+			<tbody>
+				<c:if test="${empty boardList}">
+					<tr>
+						<td colspan="3">첫 게시글의 주인공이 되어 보세요!</td>
+					</tr>
+				</c:if>
+				<c:if test="${not empty boardList}">					
+					<c:forEach items="${boardList}" var="b">
+						<tr onclick="fnDetail(${b.board_no})">
+							<td>${b.title}</td>
+							<td>${b.writer}</td>
+							<td>${b.created_at}</td>
+						</tr>
+					</c:forEach>
+				</c:if>
+			</tbody>
+		</table>
 	</div>
 	
 </body>
-</html>	
+</html>
