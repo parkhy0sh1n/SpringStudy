@@ -12,7 +12,6 @@
 
 	<!-- typeAliases -->
 	<typeAliases>
-		<!-- 이름이 너무 기니까 줄여서 부르겠다. -->
 		<typeAlias alias="Board" type="com.gdu.app07.domain.BoardDTO" />
 	</typeAliases>
 
