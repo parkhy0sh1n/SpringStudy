@@ -1,0 +1,14 @@
+package com.gdu.app07.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@PropertySource
+@Configuration
+public class DBConfig {
+
+	// HikaryConfig Bean
+	
+	// HikariDataSource Bean
+	
+}

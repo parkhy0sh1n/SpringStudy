@@ -1,0 +1,16 @@
+package com.gdu.app04;
+
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+// JUnit4
+@RunWith(SpringJUnit4ClassRunner.class)
+
+/*
+	@ContextConfiguration
+	1. 어떤 방식으로 Spring Container에 Bean을 등록했는지 알려주는 역할이다.
+	2. Bean 등록 방식
+*/
+public class BoardUnitTest {
+
+}

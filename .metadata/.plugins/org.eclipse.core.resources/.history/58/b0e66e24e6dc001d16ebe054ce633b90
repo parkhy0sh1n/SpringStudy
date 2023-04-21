@@ -1,0 +1,12 @@
+package com.gdu.app04;
+
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+// JUnit4
+@RunWith(SpringJUnit4ClassRunner.class)
+
+
+public class BoardUnitTest {
+
+}

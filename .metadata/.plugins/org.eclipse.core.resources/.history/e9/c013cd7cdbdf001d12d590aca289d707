@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace는 mybatis.mapper.board.xml 파일을 의미한다 -->
+<mapper namespace="mybatis.mapper.board">
+
+	<!--  
+		parameterType : DAO에서 mapper로 전달하는 값의 타입
+		resultType	  : mapper에서 DAO로 반환하는 값의 타입(insert, update, delete는 사용하지 못한다.)
+	-->
+	
+	<!-- mybatis-config typeAliases에 의해 Board -->
+	<select id="selectBoarList" resultType="Board">
+		SELECT BOARD_NO, TITLE, CONTENT, WRITER, CREATED_AT, MODIFIED_AT
+		  FROM BOARD
+		 ORDER BY BOARD_NO DESC
+	</select>
+	
+	<select id="selectBoardByNo" parameterType="int" resultType="Board">
+		SELECT BOARD_NO, TITLE, CONTENT, WRITER, CREATED_AT, MODIFIED_AT
+		  FROM BOARD
+		 WHERE BOARD_NO = #{boardNo}
+	</select>
+	
+	<!-- 필드(BoarDTO Board)들을 변수의 이름으로 사용 -->
+	<insert id="insertBoard" parameterType="Board">
+		INSERT INTO BOARD 
+			(BOARD_NO, TITLE, CONTENT, WRITER, CREATED_AT, MODIFIED_AT)
+		VALUES
+			(BOARD_SEQ.NEXTVAL, #{title}, #{content}, #{writer}, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS'), TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS'))
+	</insert>
+	
+</mapper>

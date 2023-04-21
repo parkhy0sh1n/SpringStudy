@@ -1,0 +1,40 @@
+package com.gdu.app07.service;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Service;
+
+import com.gdu.app07.domain.BoardDTO;
+import com.gdu.app07.repository.BoardDAO;
+
+@Service
+public class BoardServiceImpl implements BoardService {
+
+	@Override
+	public List<BoardDTO> getBoardList() {
+		return BoardDAO.selectBoardList();
+	}
+
+	@Override
+	public BoardDTO getBoardByNo(HttpServletRequest request) {
+		return null;
+	}
+
+	@Override
+	public int addBoard(HttpServletRequest request) {
+		return 0;
+	}
+
+	@Override
+	public int modifyBoard(HttpServletRequest requset) {
+		return 0;
+	}
+
+	@Override
+	public int removeBoard(HttpServletRequest request) {
+		return 0;
+	}
+
+}

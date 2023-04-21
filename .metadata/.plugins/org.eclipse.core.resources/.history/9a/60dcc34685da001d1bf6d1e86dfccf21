@@ -1,0 +1,27 @@
+package com.gdu.app03.service;
+
+import java.io.File;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.FileCopyUtils;
+
+public class FourthServiceImpl implements IFourthService {
+	
+	@Override
+	public ResponseEntity<byte[]> display(String path, String filename) {
+		
+		try {
+			
+			// path와 filename을 이용해서 File 객체 만들기
+			File file = new File(path, filename);
+			
+			byte[] b = FileCopyUtils.copyToByteArray(file);
+			
+			return null;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

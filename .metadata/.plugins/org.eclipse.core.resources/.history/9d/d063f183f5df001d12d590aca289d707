@@ -1,0 +1,33 @@
+package com.gdu.app07.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.gdu.app07.service.BoardService;
+
+@Controller
+@RequestMapping("/board")
+public class BoardController {
+	
+	@Autowired
+	private BoardService boardService;
+	
+	/*
+		데이터(속성) 저장 방법
+		1. forward  : Model에 attribute로 저장한다.
+		2. redirect : RedirectAttributes에 flashAttribute로 저장한다.
+	*/
+	
+	// getBoardList() 서비스가 반환한 List<BoardDTO>를 /WEB-INF/views/board/list.jsp로 전달한다.
+	@GetMapping("/list.do")
+	// Model : Controller에서 생성된 데이터를 담아 View로 전달할 때 사용하는 객체이다.
+	public String list(Model model) {
+		model.addAttribute("boardList", boardService.getBoardList());
+		return "board/list";
+		
+	}
+
+}

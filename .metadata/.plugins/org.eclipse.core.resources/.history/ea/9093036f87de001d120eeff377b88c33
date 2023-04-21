@@ -1,0 +1,5 @@
+package com.gdu.app06.service;
+
+public interface BoardService {
+
+}

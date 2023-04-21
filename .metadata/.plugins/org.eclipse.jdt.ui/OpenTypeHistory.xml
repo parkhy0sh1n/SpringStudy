@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=03_Ajax/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.gdu.app03.service{IFirstService.java[IFirstService" modifiers="513" timestamp="1681370455000"/>
+    <typeInfo handle="=03_Ajax/\/Library\/Java\/JavaVirtualMachines\/jdk-11.jdk\/Contents\/Home\/lib\/jrt-fs.jar`java.desktop=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;java.awt.event(ItemListener.class[ItemListener" modifiers="1537" timestamp="1670344587000"/>
+    <typeInfo handle="=03_Ajax/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.gdu.app03.service{IThirdService.java[IThirdService" modifiers="513" timestamp="1681438117000"/>
+    <typeInfo handle="=03_Ajax/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.gdu.app03.service{IFourthService.java[IFourthService" modifiers="513" timestamp="1681450608000"/>
+    <typeInfo handle="=04_jdbc_jUnit/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.gdu.app04.service{BoardService.java[BoardService" modifiers="513" timestamp="1681701124000"/>
+    <typeInfo handle="=05_Dbcp_Logback/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.gdu.app05.service{BoardService.java[BoardService" modifiers="513" timestamp="1681800450000"/>
+</typeInfoHistroy>

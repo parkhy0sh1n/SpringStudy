@@ -1,0 +1,26 @@
+package com.gdu.app07.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+
+import com.zaxxer.hikari.HikariConfig;
+
+@PropertySource(value={"classpath:application.properties"})		// application.properties 파일의 속성을 읽어 오자!
+@Configuration
+public class DBConfig {
+	
+	@Autowired
+	private Environment env;
+
+	// HikaryConfig Bean
+	@Bean
+	public HikariConfig hikariConfig() {
+		HikariConfig hikariConfig = new HikariConfig();
+		hikariConfig.setDriverClassName("spring.datasource.hikari.driver-class-name");
+	}
+	// HikariDataSource Bean
+	
+}

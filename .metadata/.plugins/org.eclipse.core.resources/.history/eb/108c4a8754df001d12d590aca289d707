@@ -1,0 +1,14 @@
+package com.gdu.app07.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@PropertySource(value="{classpath:application.properties}")		// application.properties 파일의 속성을 읽어 오자!
+@Configuration
+public class DBConfig {
+
+	// HikaryConfig Bean
+	
+	// HikariDataSource Bean
+	
+}

@@ -1,0 +1,19 @@
+package com.gdu.app03.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.gdu.app03.domain.BmiVO;
+
+@Controller
+public class SecondController {
+	
+	@GetMapping(value="/second/bmi1", produces=MediaType.APPLICATION_JSON_VALUE)	// MediaType.APPLICATION_JSON_VALUE는 "application/json"이다.
+	public BmiVO bmi(HttpServletRequest request, HttpServletResponse response) {
+		
+	}
+}

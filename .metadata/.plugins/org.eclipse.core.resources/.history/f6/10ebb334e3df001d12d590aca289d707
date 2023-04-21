@@ -1,0 +1,30 @@
+package com.gdu.app07.repository;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.gdu.app07.domain.BoardDTO;
+
+@Repository
+public class BoardDAO {
+	
+	@Autowired
+	private SqlSessionTemplate sqlSessionTemplate;
+	
+	private final String NS = "mybatis.mapper.board.";
+	
+	public List<BoardDTO> selectBoardList() {
+		// selectList : 쿼리문이 없으면 List<>로 반환
+		return sqlSessionTemplate.selectList(NS + "selectBoardList");
+	}
+	
+	public BoardDTO selectBoardByNo(int boardNo) {
+		// selectOnd : 쿼리문으 없으면 null을 반환
+		return sqlSessionTemplate.selectOne(NS + "selectBoardByNo", boardNo);
+	}
+	
+	
+}

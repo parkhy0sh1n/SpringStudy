@@ -1,0 +1,17 @@
+package com.gdu.app03.service;
+
+import java.io.File;
+
+import org.springframework.http.ResponseEntity;
+
+public class FourthServiceImpl implements IFourthService {
+	
+	public ResponseEntity<byte[]> display(String path, String filename) {
+		
+		// path와 filename을 이용해서 File 객체 만들기
+		File file = new File(path, filename);
+		
+		return null;
+	}
+
+}
