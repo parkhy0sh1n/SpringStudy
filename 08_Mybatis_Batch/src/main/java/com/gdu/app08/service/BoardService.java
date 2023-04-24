@@ -3,21 +3,15 @@ package com.gdu.app08.service;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import com.gdu.app08.domain.BoardDTO;
 
 public interface BoardService {
-	
-	// 게시글 목록
 	public List<BoardDTO> getBoardList();
-	// 상세 보기
 	public BoardDTO getBoardByNo(HttpServletRequest request);
-	// 게시글 삽입
-	public int addBoard(HttpServletRequest request);
-	// 게시글 수정
-	public int modifyBoard(HttpServletRequest request);
-	// 게시글 삭제
-	public int removeBoard(HttpServletRequest request);
-	// 트랜잭션
-	public void testTx();
+	public void addBoard(HttpServletRequest request, HttpServletResponse response);
+	public void modifyBoard(HttpServletRequest request, HttpServletResponse response);
+	public void removeBoard(HttpServletRequest request, HttpServletResponse response);
+	public void removeBoardList(HttpServletRequest request, HttpServletResponse response);
 }
