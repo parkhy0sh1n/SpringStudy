@@ -48,5 +48,9 @@
 			</foreach>
 		</where>
 	</delete>
+	
+	<select id="selectBoardCount" resultType="int">
+	
+	</select>
 
 </mapper>
