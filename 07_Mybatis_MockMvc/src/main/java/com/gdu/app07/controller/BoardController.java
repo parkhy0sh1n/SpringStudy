@@ -12,10 +12,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gdu.app07.service.BoardService;
 
-//DispatcherServlet으로부터 Controller로 스캔되어 Bean 객체에 저장된다.
+// DispatcherServlet으로부터 Controller로 스캔되어 Bean 객체에 저장된다.
 @Controller
-//특정 URI로 요청을 보내면 Controller에서 어떠한 방식으로 처리할지 정의하는 애너테이션.
-//모든 요청에 대한 Mapping에 /board가 prefix(접두사)로 추가된다.
+// 특정 URI로 요청을 보내면 Controller에서 어떠한 방식으로 처리할지 정의하는 애너테이션.
+// 모든 요청에 대한 Mapping에 /board가 prefix(접두사)로 추가된다.
 @RequestMapping("/board")
 public class BoardController {
 	
@@ -73,12 +73,6 @@ public class BoardController {
 	public String remove(HttpServletRequest request, RedirectAttributes redirectAttributes) {
 		redirectAttributes.addFlashAttribute("removeResult", boardService.removeBoard(request));
 		return "redirect:/board/list.do";
-	}
-	
-	// 트랜잭션 테스트
-	@GetMapping("/tx.do")
-	public void tx() {
-		boardService.testTx();
 	}
 
 }

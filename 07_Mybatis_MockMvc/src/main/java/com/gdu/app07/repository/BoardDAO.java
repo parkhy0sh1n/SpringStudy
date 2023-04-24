@@ -16,17 +16,18 @@ public class BoardDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 	
+	// board.xml 경로의 접두사를 상수로 선언.
 	private final String NS = "mybatis.mapper.board.";
 	
 	public List<BoardDTO> selectBoardList() {
-		// selectList : 쿼리문이 없으면 List<>로 반환
+		// selectList : SELECT문의 반환 값이 없으면 List<>로 반환한다.
 		// NS(board.xml 경로의 접두사) + ID
 		return sqlSessionTemplate.selectList(NS + "selectBoardList");
 	}
 	
 	public BoardDTO selectBoardByNo(int boardNo) {
-		// selectOnd : 쿼리문이 없으면 null을 반환
-		// NS + ID, 반환할 값
+		// selectOnd : SELECT문의 반환 값이 없으면 null을 반환한다.
+		// NS + ID, 반환 할 매개변수
 		return sqlSessionTemplate.selectOne(NS + "selectBoardByNo", boardNo);
 	}
 	

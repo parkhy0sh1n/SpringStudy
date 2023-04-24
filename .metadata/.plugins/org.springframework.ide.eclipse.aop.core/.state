@@ -2,9 +2,10 @@
 <aop-reference-model>
 <aop-project name="03_Ajax"/>
 <aop-project name="05_Dbcp_Logback"/>
+<aop-project name="07_Mybatis_MockMvc"/>
 <aop-project name="02_Mvc"/>
+<aop-project name="notice"/>
 <aop-project name="01_IoC_Container"/>
-<aop-project name="practice"/>
 <aop-project name="06_SpringJdbc_Aop">
 <aspect-definition advice-class-name="com.gdu.app06.aop.ParameterCheckAOP" advice-method-name="paramLogging(org.aspectj.lang.JoinPoint)" advice-type="AFTER" aspect-end-line-number="24" aspect-name="parameterCheckAOP" aspect-start-line-number="24" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/06_SpringJdbc_Aop/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" pointcut-expression="setPointCut()" proxy-target-class="false">
 <aop-reference advice-type="AFTER" bean="1:BeansModel|2:06_SpringJdbc_Aop|3:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml|7:beans:beans:8|8:boardController:8" bean-file="/06_SpringJdbc_Aop/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/06_SpringJdbc_Aop/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" source="=06_SpringJdbc_Aop/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.gdu.app06.aop{ParameterCheckAOP.java[ParameterCheckAOP~paramLogging~QJoinPoint;" source-start-line="38" target="=06_SpringJdbc_Aop/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.gdu.app06.controller{BoardController.java[BoardController~modifyParamCheck~QBoardDTO;" target-start-line="54"/>
