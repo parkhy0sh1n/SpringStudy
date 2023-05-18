@@ -1,8 +1,0 @@
-package com.gdu.app04;
-
-import org.junit.runner.RunWith;
-
-@RunWith(SpingJUnit4ClassRunner.class)
-public class BoardUnitTest {
-
-}

@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=/Users/mong/Documents/springstudy/.git\:
-GitRepositoriesView.GitDirectories.relative=.git\:
+GitRepositoriesView.GitDirectories=/Users/mong/Documents/springstudy/.git\:/Users/mong/Documents/Vinery/.git\:
+GitRepositoriesView.GitDirectories.relative=.git\:/Users/mong/Documents/Vinery/.git\:
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

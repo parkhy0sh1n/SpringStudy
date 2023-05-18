@@ -1,5 +1,0 @@
-package com.gdu.app07.service;
-
-public interface BoardService {
-
-}
